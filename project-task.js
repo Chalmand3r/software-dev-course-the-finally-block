@@ -42,22 +42,22 @@ Step 4: Test Your Solution
 // 🛠️ Starter Code: processFile Function
 // ============================================
 
-function processFile(fileName, fileData) {
+function processFile(fileName, fileData) { // Simulated file processing function
   try 
   {
     if(!fileName)
-      throw new Error("File name is required");
+      throw new Error("File name is required"); // Custom exception for missing file name
     if(fileData == "")
-      throw new Error("File data cannot be empty");
+      throw new Error("File data cannot be empty"); // Custom exception for empty file data
      if(typeof fileData !== "string") 
-    throw new TypeError("File data must be a string"); 
+    throw new TypeError("File data must be a string"); // Custom exception for non-string file data
 
   } catch(err) {
-       console.log("error:", err.message);
+       console.log("error:", err.message); // Log the error message
   }
 finally{
-  console.log(fileName, fileData);
-  console.log("Cleaning up resources...");
+  console.log(fileName, fileData); // Log the file name and data, even if an error occurred
+  console.log("Cleaning up resources..."); // Simulated resource cleanup
 }
 }
 
