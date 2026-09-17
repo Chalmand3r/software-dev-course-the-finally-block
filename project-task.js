@@ -43,21 +43,34 @@ Step 4: Test Your Solution
 // ============================================
 
 function processFile(fileName, fileData) {
-  try {
+  try 
+  {
+    if(!fileName)
+      throw new Error("File name is required");
+    if(fileData == "")
+      throw new Error("File data cannot be empty");
+     if(typeof fileData !== "string") 
+    throw new TypeError("File data must be a string"); 
+
+  } catch(err) {
+       console.log("error:", err.message);
+  }
+finally{
+  console.log(fileName, fileData);
+  console.log("Cleaning up resources...");
+}
+}
+
+  
     // TODO: Add input validation here
     
     // TODO: Implement simulated file processing here
-    console.log(`Processing file: ${fileName}`);
-    console.log(`File content: ${fileData}`);
     
     // TODO: Add simulated file operations (reading/writing)
     
-  } catch (err) {
     // TODO: Implement error handling
-    console.error(err);
-  }
+    
   // TODO: Implement a finally block to close resources
-}
 
 // ============================================
 // 🧪 Test Cases Below
